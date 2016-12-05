@@ -14,13 +14,20 @@
  *= require_self
  */
 
+// Bootstrap
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+// Font Awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Typography Styles
 h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
+// Background Gradient
 .navbar, .home-callout {
     // Gradient provided by @_ighosh at uiGradients.com
     background: #fc00ff; /* fallback for old browsers */
@@ -28,28 +35,38 @@ h1, h2, h3 {
     background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+// Nav Styles
 .navbar {
     border: none;
 }
-
-.navbar-default .navbar-brand {
-    color: white;
+    // Navbar sandwich white bars
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
 }
 
-.navbar-default .navbar-brand:hover {
-    color: white;
-    opacity: 0.75;
+.navbar-default .navbar-toggle {
+    border: 2px solid white;
+    &:hover, &:focus {
+        background-color: #fc00ff;
+        // opacity: 0.25;
+    }
 }
 
+.navbar-brand {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
     color: white;
+    &:hover {
+        color: white;
+        opacity: 0.75;
+    }
 }
 
-.navbar-default .navbar-nav > li > a:hover {
-    color: white;
-    opacity: 0.75;
-}
-
+// Homepage Styles
 .home-callout {
     color: white;
     margin-top: -20px;
